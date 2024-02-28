@@ -1,0 +1,66 @@
+@require '../stylesheets/variables/_colors.styl';
+
+// 1/2019: Optimistic Blue and Freedom Red have each been split to have a -dark and -light variation. The original
+// values now exist as the -light variation; -dark was added to provide stronger contrast and readability when used as
+// text on a light background.
+
+// todo: Because this stylesheet has many instances of the old variables, and because text-on-light is the most common
+// situation, these backup variables reference the -dark variants. QA has reviewed these changes on staging as well. At
+// some point in the future, we can assess each usage and assign the most appropriate variation in each instance.
+$optimistic-blue  = $optimistic-blue-dark
+$freedom-red      = $freedom-red-dark
+
+// CSS to be remove later. The sub-nav-trigger for when width is greater than 980px. 
+// Needs to move into sticky sub menu and not left in global css
+.sub-nav-trigger {
+    display: block
+}
+@media (min-width: 980px) {
+    .sub-nav-trigger {
+        display: none
+    }
+}
+.sub-nav-chevron {
+    height: 12px;
+    width: 18px;
+    float: right;
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    margin-top: 4px
+}
+.sub-nav-chevron .icon-stroke {
+    fill: $white
+}
+.active .sub-nav-chevron {
+    -ms-transform: rotate(0);
+    transform: rotate(0)
+}
+.component {
+    position: relative;
+}
+.component-section {
+    position: relative
+}
+@media (min-width: 768px) {
+    .component-section .contact-departments-container h2.component-title {
+        max-width: none
+    }
+}
+@media (min-width: 980px) {
+    .component-section .contact-departments-container h2.component-title {
+        max-width: none
+    }
+}
+.component-section .sh {
+    margin-bottom: 1rem
+}
+@media (min-width: 980px) {
+    .component-section .sh {
+        margin-bottom: 1.25rem
+    }
+}
+.component-section.component-no-title,
+.component-section.paragraphs-item-photo {
+    padding-top: 0px;
+    padding-bottom: 0px
+}

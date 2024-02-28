@@ -1,0 +1,65 @@
+title: Grid of People
+handle: grid_person_cards
+status: ready
+variants:
+  - name: hub
+    preview: '@hub'
+context:
+  header:
+    title: City Government
+    contact: false
+  people:
+    - name: Michelle Wu
+      position: Mayor
+      image: https://www.boston.gov/sites/default/files/mayor-headshot-square.png
+      contact: mailto:mayor@boston.gov
+      url: https://www.boston.gov/mayor
+      grid: g--1 g--3--sl
+    - name: Mayor Michelle Wu
+      position: Mayor
+      image: https://www.boston.gov/sites/default/files/mayor-headshot-square.png
+      contact: mailto:mayor@boston.gov
+      url: https://www.boston.gov/mayor
+      grid: g--1 g--3--sl
+    - name: Michelle Wu
+      position: Mayor of the City of Boston in the Commonwealth of Massachusetts.
+      image: https://www.boston.gov/sites/default/files/mayor-headshot-square.png
+      contact: mailto:mayor@boston.gov
+      url: https://www.boston.gov/mayor
+      grid: g--1 g--3--sl
+    - name: Mayor Michelle Wu
+      position: Mayor
+      image: https://www.boston.gov/sites/default/files/mayor-headshot-square.png
+      contact: mailto:mayor@boston.gov
+      url: https://www.boston.gov/mayor
+      grid: g--1 g--3--sl
+    - name: Mayor Michelle Wu
+      position: Mayor
+      image: https://www.boston.gov/sites/default/files/mayor-headshot-square.png
+      contact: mailto:mayor@boston.gov
+      url: https://www.boston.gov/mayor
+      grid: g--1 g--3--sl
+    - name: Mayor Michelle Wu
+      position: Mayor
+      image: https://www.boston.gov/sites/default/files/mayor-headshot-square.png
+      contact: mailto:mayor@boston.gov
+      url: https://www.boston.gov/mayor
+      grid: g--1 g--3--sl
+    - name: Mayor Michelle Wu
+      position: Mayor
+      image: https://www.boston.gov/sites/default/files/mayor-headshot-square.png
+      contact: mailto:mayor@boston.gov
+      url: https://www.boston.gov/mayor
+      grid: g--1 g--3--sl
+    - name: Mayor Michelle Wu
+      position: Mayor
+      image: https://www.boston.gov/sites/default/files/mayor-headshot-square.png
+      contact: mailto:mayor@boston.gov
+      url: https://www.boston.gov/mayor
+      grid: g--1 g--3--sl
+    - name: Mayor Michelle Wu
+      position: Mayor
+      image: https://www.boston.gov/sites/default/files/mayor-headshot-square.png
+      contact: mailto:mayor@boston.gov
+      url: https://www.boston.gov/mayor
+      grid: g--1 g--3--sl

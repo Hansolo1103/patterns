@@ -1,0 +1,11 @@
+title: Grid
+handle: grid
+status: ready
+preview: '@grid-base'
+variants:
+  - name: Reverse
+    context:
+      variant: g--r
+  - name: Reverse only on mobile viewports
+    context:
+      variant: g--mr

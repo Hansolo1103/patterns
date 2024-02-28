@@ -1,0 +1,118 @@
+/*
+
+   FOOTER
+
+   Base:
+    ft
+
+   Modifier:
+    None Yet
+
+ */
+
+.ft
+  background-color: $charles-blue
+  padding: $sizing-500
+  padding-bottom: 0
+
+  &-c
+    min-height: 83px
+    padding-left: 75px
+    background-image: url(../images/b-light.svg)
+    background-position: 0 0
+    background-repeat: no-repeat
+    background-size: 54px 83px
+
+    @media $media-medium
+      padding-top: 30px
+
+  &-ll
+    font-family: $sans
+    font-size: responsive 12px 14px
+    font-range: 480px 1440px
+    font-weight: 300
+    letter-spacing: 1px
+    line-height: 1
+    list-style: none
+    margin: 0
+    padding: 0
+
+    &-i
+      padding-right: 18px
+      padding-bottom: 8px
+      margin: 0
+
+    &-a
+      text-transform: uppercase
+      text-decoration: none
+      font-weight: 500
+      color: $optimistic-blue-light-SR
+
+      a
+        color: $optimistic-blue-light-SR
+
+      &:hover, &:focus
+        color: $freedom-red-light
+
+    @media $media-medium
+      &:not(:first-child)
+        margin-top: 0
+
+      &-i
+        float: left
+
+      &-311
+        float: right
+        margin-left: 18px
+        height: 82px
+        width: 82px
+        background-image: url(../images/311-circle.svg)
+        background-position: bottom left
+        text-indent: -999em
+        transform: translateY(-50%) translateY(8px)
+
+      &-a:hover, &-a:focus
+        .ft-ll-311
+          background-position: top left
+
+      &--r
+        float: right
+  
+  &-ite
+    display: flex;
+    justify-content: space-between;
+
+    ul
+      &:first-child
+        padding-left: 20px
+
+        li
+          &:first-child
+            display: none
+
+        @media $media-table-to-desktop-portrait
+          padding-right: 18px
+          color: green
+
+        @media $media-medium-max
+          li
+            &:first-child
+              display: block
+
+    .ft-ite-311
+      min-width: 40%;
+      display: flex;
+      justify-content: flex-end;
+
+      @media $media-medium-max
+        display: none
+
+// handle hover interference with focus
+.ft-ll-a.focus-active:hover
+  pointer-events: none
+
+.focus-active:hover .ft-ll-311
+  background-position: 0 100%
+
+.focus-active:focus .ft-ll-311
+  background-position: 0 0

@@ -1,0 +1,38 @@
+<div
+  class="hro{{#if image}}{{#if title}} hro--t{{else}} hro--b{{/if}}{{else}} hro--d{{/if}}"
+>
+  {{#if image}}
+    <img
+      srcset="
+        {{image.mobile1x}} 480w,
+        {{image.tablet1x}} 768w,
+        {{image.desktop1x}} 1024w,
+        {{image.wide1x}} 1200w,
+      "
+      sizes="(max-width: 600px) 480px, 768px, 1024px, 1200px"
+      src="{{image.mobile1x}}"
+      alt="{{title}}"
+      class="hro--img"
+    />
+  {{/if}}
+
+  <div class="hro-c">
+    {{#if intro}}
+      <div class="hro-i{{#if home}} hro-i--l{{/if}}">{{intro}}</div>
+    {{/if}}
+    <h1 class="hro-t{{#if home}} hro-t--l{{/if}}">{{title}}</h1>
+    {{#if cta}}
+      <a href="{{cta.link}}" class="btn btn--c btn--ib">{{cta.text}}</a>
+    {{else}}
+      {{#if subheader}}
+        <div class="hro-st{{#if home}} hro-st--l{{/if}}{{#if image}} hro-st--w{{/if}}">{{subheader}}</div>
+      {{/if}}
+    {{/if}}
+  </div>
+
+  {{#if b}}
+    <div class="the-b the-b--c">
+      <img src="/images/b-light.svg" alt="B Logo" class="the-b-i">
+    </div>
+  {{/if}}
+</div>

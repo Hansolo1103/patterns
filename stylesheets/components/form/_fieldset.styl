@@ -1,0 +1,71 @@
+/*
+
+   Fieldset
+
+   Base:
+    fs
+
+   Modifier:
+    i = fields inline
+
+ */
+
+.fs
+  border: none
+  margin-left: 0
+  margin-right: 0
+  padding: 0
+
+  // legend
+  &-l
+    padding: 0
+    margin-bottom: $sizing-200
+
+    text-transform: uppercase
+    // removes the space left for the descenders we don't have
+    // because uppercase
+    line-height: .7
+    font-family: $sans
+    font-size: responsive 16px 20px
+    font-range: 480px 1440px
+    color: $charles-blue
+    display: block
+
+    // legends can't display: flex, so here's a content that can do a flex row
+    &-c
+      display: flex
+      align-items: center
+
+  &-c
+    @media $media-medium
+      display: flex
+      flex-grow: 1
+      flex-direction: column
+
+    &--i
+      @media $media-medium
+        display: flex
+        flex-direction: row
+        align-items: center
+
+        .txt
+          &:not(:last-child)
+            padding-right: $sizing-300
+
+          &:first-child
+            flex-grow: 1
+
+          &:not(:last-child)
+            margin-bottom: 0
+
+        .txt-l
+          margin-top: 0
+
+        .cb
+          margin-bottom: 0
+
+          &:not(:first-child)
+            margin-left: $sizing-300
+
+    &--c
+      align-items: center

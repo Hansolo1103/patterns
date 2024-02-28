@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Chart</title>
+
+    <!-- [if !IE]><! -->
+    <link rel="stylesheet" type="text/css" href="/css/public.css" />
+    <!-- <![endif] -->
+    <!--[if lt IE 10]>
+      <link media="all" rel="stylesheet" href="/css/ie.css" />
+    <![endif]-->
+  </head>
+
+  <body>
+    <cob-chart>
+      <script type="application/json" slot="config">
+        {
+          "$schema": "https://vega.github.io/schema/vega/v4.json",
+          "boston": {
+            "chartID": "pieChart"
+          },
+          "width": 200,
+          "height": 200,
+          "autosize": {
+            "type": "pad",
+            "resize": true
+          },
+          "padding": 0,
+          "data": [
+            {
+              "name": "table",
+              "url": "https://gist.githubusercontent.com/paylakatel/66015b8cc9e3f8f99509d84f5b60d66c/raw/bc9e03dea5532c3ee5c59e3d134e109541929201/expenditures-pie.csv",
+              "format": {
+                "type": "csv"
+              },
+              "transform": [
+                {
+                  "type": "pie",
+                  "field": "percent",
+                  "sort": true
+                }
+              ]
+            }
+          ],
+          "scales": [
+            {
+              "name": "color",
+              "type": "ordinal",
+              "range": {
+                "scheme": "tableau20"
+              }
+            }
+          ],
+          "legends": [
+            {
+              "fill": "color",
+              "orient": "bottom",
+              "labelFont": "Lora",
+              "labelLimit": 500,
+              "labelFontSize": 14,
+              "offset": 5
+            }
+          ],
+          "marks": [
+            {
+              "type": "arc",
+              "from": {
+                "data": "table"
+              },
+              "encode": {
+                "enter": {
+                  "fill": {
+                    "scale": "color",
+                    "field": "expenditure"
+                  },
+                  "x": {
+                    "signal": "width / 2"
+                  },
+                  "y": {
+                    "signal": "height / 2"
+                  },
+                  "tooltip": {
+                    "signal": "{title: datum.expenditure, 'Budget': format(datum.percent/100, '0.0p')}"
+                  }
+                },
+                "update": {
+                  "startAngle": {
+                    "field": "startAngle"
+                  },
+                  "endAngle": {
+                    "field": "endAngle"
+                  },
+                  "padAngle": 0,
+                  "innerRadius": {
+                    "signal": "width/4"
+                  },
+                  "outerRadius": {
+                    "signal": "width / 2"
+                  },
+                  "cornerRadius": 0
+                }
+              }
+            }
+          ]
+        }
+      </script>
+    </cob-chart>
+
+    <script src="/web-components/fleetcomponents.js"></script>
+  </body>
+</html>

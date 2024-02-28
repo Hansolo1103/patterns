@@ -1,0 +1,9 @@
+title: Link with icon
+handle: link_with_icon
+status: ready
+preview: '@centered-dark'
+context:
+  links:
+    - name: Pay a parking ticket
+      href: https://www.boston.gov/departments/parking-clerk/how-pay-parking-ticket
+      image: /images/global/icons/experiential/bike.svg

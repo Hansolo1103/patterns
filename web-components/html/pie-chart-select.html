@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Chart</title>
+
+    <!-- [if !IE]><! -->
+    <link rel="stylesheet" type="text/css" href="/css/public.css" />
+    <!-- <![endif] -->
+    <!--[if lt IE 10]>
+      <link media="all" rel="stylesheet" href="/css/ie.css" />
+    <![endif]-->
+  </head>
+
+  <body>
+    <cob-chart>
+      <script type="application/json" slot="config">
+        {
+          "$schema": "https://vega.github.io/schema/vega/v4.json",
+          "boston": {
+            "chartID": "pieChart",
+            "selectField": "Department",
+            "defaultSelection": "Election Department"
+          },
+          "width": 200,
+          "height": 200,
+          "autosize": {
+            "type": "pad",
+            "resize": true
+          },
+          "padding": 0,
+          "data": [
+            {
+              "name": "table",
+              "url": "https://gist.githubusercontent.com/paylakatel/aad8f66e3e6ae25f7e5bf64347b5b7f2/raw/1b2310bbb8c3a31a8de86972c563a9b3752f4a3f/stacked-by-department.csv",
+              "format": {
+                "type": "csv",
+                "parse": {
+                  "Amount": "number"
+                }
+              },
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum.Year === 'FY19 Adopted'"
+                },
+                {
+                  "type": "filter",
+                  "expr": "if(select === 'All', datum.Department, datum.Department === select)"
+                },
+                {
+                  "type": "pie",
+                  "field": "Amount",
+                  "sort": true
+                }
+              ]
+            }
+          ],
+          "scales": [
+            {
+              "name": "color",
+              "type": "ordinal",
+              "domain": {
+                "data": "table",
+                "field": "Expense Category"
+              },
+              "range": {
+                "scheme": "tableau10"
+              }
+            }
+          ],
+          "legends": [
+            {
+              "fill": "color",
+              "orient": "bottom",
+              "labelFont": "Lora",
+              "labelLimit": 500,
+              "labelFontSize": 14,
+              "offset": 5
+            }
+          ],
+          "signals": [
+            {
+              "name": "select",
+              "value": "All",
+              "bind": {
+                "input": "select",
+                "name": "Select a Department: ",
+                "options": [
+                  "Election Department",
+                  "Law Department",
+                  "Property Management Department"
+                ]
+              }
+            }
+          ],
+          "marks": [
+            {
+              "type": "arc",
+              "from": {
+                "data": "table"
+              },
+              "encode": {
+                "enter": {
+                  "fill": {
+                    "scale": "color",
+                    "field": "Expense Category"
+                  },
+                  "x": {
+                    "signal": "width / 2"
+                  },
+                  "y": {
+                    "signal": "height / 2"
+                  },
+                  "tooltip": {
+                    "signal": "{title: datum.Source, 'Amount of Budget': format(datum.Amount,'$,'), 'Expense Category': datum['Expense Category'], 'Department': datum.Department}"
+                  }
+                },
+                "update": {
+                  "startAngle": {
+                    "field": "startAngle"
+                  },
+                  "endAngle": {
+                    "field": "endAngle"
+                  },
+                  "padAngle": 0,
+                  "innerRadius": {
+                    "signal": "width / 4"
+                  },
+                  "outerRadius": {
+                    "signal": "width / 2"
+                  },
+                  "cornerRadius": 0
+                }
+              }
+            }
+          ]
+        }
+      </script>
+    </cob-chart>
+
+    <script src="/web-components/fleetcomponents.js"></script>
+  </body>
+</html>

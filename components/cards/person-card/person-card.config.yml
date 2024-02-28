@@ -1,0 +1,16 @@
+title: Person Card
+handle: person-card
+status: ready
+preview: '@centered'
+variants:
+  - name: On Grey
+    preview: '@centered-grey'
+  - name: On Blue
+    preview: '@centered-dark'
+context:
+  people:
+  - name: Mayor Michelle Wu
+    position: Mayor
+    image: https://www.boston.gov/sites/default/files/mayor-headshot-square.png
+    contact: mailto:mayor@boston.gov
+    url: https://www.boston.gov/mayor

@@ -1,0 +1,219 @@
+/*
+/*
+
+   CARD
+
+   Base:
+    cd
+
+   Elements:
+    t = title
+    b = body
+
+   Modifier:
+    None Yet
+
+ */
+
+.cd
+  display: block
+  background-color: $white
+  text-decoration: none
+  font-family: $serif
+
+  &:hover, &:focus-within
+    background-color: $optimistic-blue-light
+
+    .cd-t
+    .cd-st
+    .cd-d
+      color: $white
+
+    .cd-ic
+      background-color: $blended-optimistic-blue
+      background-blend-mode: multiply
+
+  &-ic
+    padding-bottom: 35%
+    background-color: $optimistic-blue-light 
+    background-position: center
+    background-size: cover
+
+  &-c
+    padding: $sizing-700
+
+  &-t
+    color: $optimistic-blue-dark
+    font-style: italic
+    font-size: responsive 18px 25px
+    font-range: 480px 1440px
+    line-height: $line-height-200
+    margin: 0
+    font-weight: 400
+    font-family: $serif
+    text-transform: none
+    letter-spacing: normal
+
+  &-d
+    color: $body-text
+    font-size: responsive 15px 18px
+    font-range: 480px 1440px
+    line-height: $line-height-300
+    margin-top: $sizing-300
+
+    &--mt0
+      margin-top: 0
+
+    p
+      margin: 0 0 1rem
+
+      &:last-child
+        margin: 0
+
+  &--plain
+    &:hover, &:focus-within
+      background-color: $white
+      .cd-t
+        color: $charles-blue
+      .cd-st
+        color: inherit
+      .cd-d
+        color: $body-text
+
+    .cd-t
+      color: $charles-blue
+
+  &--e[href*="//"]:not([href*="www.boston.gov"])
+    position: relative
+
+    &:after
+      content: ''
+      border-right: 20px solid $charles-blue;
+      border-left: 20px solid $charles-blue;
+      border-bottom: 10px solid transparent;
+      height: 40px
+      position: absolute
+      top: 0
+      right: 1rem
+      z-index: 1
+
+    &:before
+      content: ''
+      background-repeat: no-repeat
+      background-image: url(../images/global/icons/external-link-white.svg)
+      position: absolute
+      top: 0
+      right: 1rem
+      transform: translate(-8px, 11px)
+      z-index: 2
+      height: 20px
+      width: 20px
+
+// Handle white theme variation
+.b--w
+  .cd
+    border: 2px solid #e0e0e0
+
+    &:hover, &:focus-within
+      border-color: $optimistic-blue-light
+
+      .cd-c
+        border-color: $optimistic-blue-light
+
+    &-c
+      border-top: 2px solid #e0e0e0
+
+// handle hover interference with focus
+.cd.focus-active:hover
+  pointer-events: none
+  background-color: $white
+
+  .cd-t
+    color: $optimistic-blue-dark
+
+  .cd-d
+    color: $body-text
+
+  .cd-ic
+    background-color: $optimistic-blue-light
+
+.b--w
+  .cd.focus-active
+
+    &:hover
+      border-color: #e0e0e0
+
+      .cd-c
+        border-color: #e0e0e0
+
+.cd.focus-active:focus-within
+  pointer-events: auto
+  background-color: $optimistic-blue-light
+
+  .cd-t, .cd-d
+    color: $white
+
+  .cd-ic
+    background-color: $blended-optimistic-blue
+    background-blend-mode: multiply
+
+.cdr-description
+  background-color: $charles-blue
+  line-height: 1
+  width: 100%
+  display: block
+  text-align: center
+  color: $white
+  text-transform: uppercase
+  font-family: Montserrat,Arial,sans-serif
+  padding: .5em
+  font-size: .875rem
+
+.t--bold
+  font-weight: bold
+
+#align-left
+  text-align: left
+
+#align-center
+  text-align: center
+
+// style for resource card
+.cd-r
+  display: flex
+  flex-grow: 1
+  background-color: $grey-000
+  width: 100%
+  flex-direction: column
+
+  @media $media-large
+    display: block
+
+.cd-r-im
+  padding: 20px 0px 0px
+  text-align: center
+
+.cd-divider 
+  content: ""
+  padding: 1px 0
+  margin: 15px 0
+  background-color: $grey-200
+  width: 100%
+  display: inline-block
+
+.link_underline 
+  border-top: 1px solid #000
+  text-decoration: underline
+  display: block
+  padding: 20px 0
+  
+.cd-intro
+  padding-bottom: 20px
+
+.cd.g--4
+  @media $media-xlarge-max
+    lost-column: 6/12 2
+
+.cd.g--4
+  @media $media-large-max
+    lost-column: 12/12

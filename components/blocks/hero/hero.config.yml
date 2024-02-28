@@ -1,0 +1,63 @@
+title: Hero
+handle: hero
+status: wip
+variants:
+  - name: With Call to Action
+    status: 'wip'
+    context:
+      home: true
+      intro: welcome to the new
+      title: Boston.gov
+      subheader: Mayor Michelle Wu
+      cta:
+        text: View Mayor's profile
+        link: https://boston.gov/mayor
+      image:
+        wide1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+        desktop1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+        tablet1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+        mobile1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+  - name: Without Subheader
+    status: 'wip'
+    context:
+      home: true
+      intro: welcome to the new
+      title: Boston.gov
+      cta: false
+      image:
+        wide1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+        desktop1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+        tablet1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+        mobile1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+  - name: No Image
+    status: 'wip'
+    context:
+      intro: false
+      title: How to apply for a business certificate
+      subheader: Companies in Boston need to get a business certificate through the City Clerk’s office. You need to renew your certificate every four years.
+      image: false
+      cta: false
+  - name: With B
+    status: 'wip'
+    context:
+      b: true
+      home: true
+      intro: welcome to the new
+      title: Boston.gov
+      cta: false
+      image:
+        wide1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+        desktop1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+        tablet1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+        mobile1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+context:
+  home: true
+  intro: Welcome to the new
+  title: Boston.gov
+  subheader: Mayor Michelle Wu
+  cta: false
+  image:
+    wide1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+    desktop1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+    tablet1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg
+    mobile1x: https://patterns.boston.gov/assets/images/fleet/boston-header3.jpg

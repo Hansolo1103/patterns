@@ -1,0 +1,27 @@
+title: Drawer
+handle: drawer
+status: ready
+variants:
+  - name: Hub
+    preview: '@hub'
+  - name: Mini
+    context:
+      drawers:
+        - title: 'Filter by title'
+          variant: 'dr--sm'
+  - name: JS Controlled
+    context:
+      drawers:
+        - title: 'November 8, 2016: General Election'
+          subtitle: 'Last updated: 2/2017'
+          js: true
+        - title: 'November 8, 2016: General Election'
+          subtitle: 'Last updated: 2/2017'
+          js: true
+          variant: 'dr--open'
+context:
+  drawers:
+    - index: 1
+      title: 'November 8, 2016: General Election'
+      subtitle: 'Last updated: 2/2017'
+      content: '<p>Here is some test content.</p><p>Here is some test content.</p><p>Here is some test content.</p><p>Here is some test content.</p>'

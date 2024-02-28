@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+.stencil
+/assets
+/public
+deploy_key
+.vscode/
+.idea/
+.nodeready

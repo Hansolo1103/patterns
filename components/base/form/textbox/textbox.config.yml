@@ -1,0 +1,84 @@
+title: 'Text Box'
+handle: textbox
+status: ready
+context:
+  inputType: true
+  textareaType: false
+  textboxes:
+    - label: Default (filled)
+      placeholder: Full name
+      value: Danielle Cage
+      id: text
+    - label: Default (placeholder)
+      placeholder: Your email address
+      value: ""
+      id: empty-text
+    - label: Small (filled)
+      placeholder: Full name
+      value: Steve Rogers
+      id: small-text-f
+      classes: txt-f--sm
+    - label: Small (placeholder)
+      placeholder: Full name
+      id: small-text-p
+      classes: txt-f--sm
+    - label: Password
+      id: password
+      type: password
+      value: "password"
+variants:
+  - name: Combo
+    context:
+      textboxes:
+        - label: Full name
+          placeholder: Full name
+          id: text
+          options:
+            - name: Danielle Cage
+            - name: Steve Rogers
+            - name: Bucky Barnes
+        - label: Quantity
+          id: q
+          size: 5
+          value: 4
+          classes: ta-r
+          options:
+            - name: 1
+            - name: 2
+            - name: 3
+            - name: 4
+            - name: 5
+  - name: Textarea
+    context:
+      id: text
+      inputType: false
+      textareaType: true
+      textboxes:
+        - label: Captains America
+          placeholder: Full names
+          # for textareas we want to see multiple lines
+          value: |+
+            Steve Rogers&
+            Bucky Barnes&
+            Danielle Cage&
+            Samantha Wilson&
+            Steve Mouser
+          id: text
+        - label: Email
+          placeholder: Your email address
+          value: ""
+          id: empty-text
+  - name: Error
+    context:
+      inputType: true
+      textareaType: false
+      textboxes:
+        - label: First name
+          placeholder: First name
+          value: Carol Danvers
+          id: text
+        - label: Email
+          placeholder: Your email address
+          value: ""
+          id: text
+          error: Please enter an email address
